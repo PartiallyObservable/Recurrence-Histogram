@@ -1,4 +1,4 @@
-# Reccurrence Histogram Builder
+# Recurrence Histogram Builder
 
 ![LogisticBifurcation](bifurcation.png)
 
