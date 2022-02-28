@@ -5,14 +5,14 @@
 
 saveim = "bifurcation"; %set to [] to not save
 
-mapFun = @logistic_map; 
+mapFun = @logistic_map; % 1d recurrence relation to build histogram with
 
 initState = 0.5;      % initial state value to start iteration
 multRange = [2.85,4]; % const. multiplier range for map (r in logistic map)
 stateRange = [0,1];   % state range to count visitations
-multRes = 1920*2;     % integer divisions of multiplier range
-stateRes = 1080*2;    % integer divisions of state counts
-nIter = round(stateRes/4); % determines valid datatype, ex. < 65535 uint16
+multRes = 1920*4;     % integer divisions of multiplier range
+stateRes = 1080*4;    % integer divisions of state counts
+nIter = round(stateRes/4); % numer of iterations at each multiplier value to count in histogram
 cntThresh = 0;        % only start to count states that have been visited this many times
 useParallel = true;  % use parfor loop to iterate over multiplier range
 
@@ -69,6 +69,11 @@ xticklabels(multLabels);
 xtickangle(60);
 yticks(stateTicks);
 yticklabels(stateLabels);
+
+xlabel('r');
+ylabel('x');
+title('Logistic Map $x_{n+1} = r*x_n(1-x_n)$ Bifurcation','interpreter','latex');
+axis image
 
 %% save
 

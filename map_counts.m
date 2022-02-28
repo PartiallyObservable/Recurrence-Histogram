@@ -1,6 +1,6 @@
 % Copyright 2018 Mark Debord <mjay.debord@gmail.com> GPLv3 (License.txt)
-function [biCnts,mapIters] = bifurcation_counts(mapFun,initState,multRange,stateRange,multRes,stateRes,nIter,cntThresh,useParallel,dtype)
-%bifurcation_counts iterates the state of a given map function (such as a logistic
+function [biCnts,mapIters] = map_counts(mapFun,initState,multRange,stateRange,multRes,stateRes,nIter,cntThresh,useParallel,dtype)
+%map_counts iterates the state of a given map function (such as a logistic
 % map x_n+1 = r*x_n(1-x_n) ) over a given multiplier range (r in logistic
 % map) and returns the number of state visitations (up to a given
 % resolution) for every value of r (also up to a given resolution)
